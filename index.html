@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuộc Kháng Chiến Chống Mỹ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4e1c6; /* Màu giấy cổ điển */
+            color: #5a3e1b;
+        }
+        header {
+            background: #8b0000;
+            color: white;
+            padding: 15px;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            background: #5a3e1b;
+            overflow: hidden;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background: #9b6a4b;
+        }
+        .main-image {
+            width: 80%;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .main-image:hover {
+            transform: scale(1.07);
+        }
+        main {
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Cuộc Kháng Chiến Chống Mỹ
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('mo-dau')">Mở đầu</a></li>
+            <li><a href="#" onclick="showContent('dien-bien')">Diễn biến</a></li>
+            <li><a href="#" onclick="showContent('nguyen-nhan')">Nguyên nhân</a></li>
+            <li><a href="#" onclick="showContent('ket-qua')">Kết quả</a></li>
+            <li><a href="#" onclick="showContent('y-nghia')">Ý nghĩa</a></li>
+        </ul>
+    </nav>
+    <main id="content" class="fade-in">
+        <img src="https://cdnphoto.dantri.com.vn/thTGTyXZd1-MdofO6cFZTL3jnvE=/zoom/1200_630/a3HWDOlTcvMNT73KRccc/Image/2013/04/1-cfe2c.jpg" alt="Hình ảnh cuộc kháng chiến" class="main-image">
+        <p>Cuộc kháng chiến chống Mỹ cứu nước (1954 - 1975) là một trong những trang sử hào hùng nhất của dân tộc Việt Nam...</p>
+    </main>
+    
+    </main>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Hiệu ứng fade-in khi tải trang
+        setTimeout(() => {
+            document.getElementById("content").classList.add("fade-in");
+        }, 200);
+
+        // Hiệu ứng thay đổi nội dung với animation
+        function showContent(section) {
+            const content = document.getElementById("content");
+            content.classList.remove("fade-in"); // Xóa hiệu ứng cũ
+
+            setTimeout(() => {
+                content.innerHTML = contents[section];
+                content.classList.add("fade-in"); // Thêm hiệu ứng mới sau khi cập nhật nội dung
+                addImageHoverEffect(); // Gọi lại hàm thêm hiệu ứng hover
+            }, 300); // Delay để tạo hiệu ứng chuyển đổi mượt mà
+        }
+
+        // Hàm thêm hiệu ứng hover cho tất cả ảnh
+        function addImageHoverEffect() {
+            document.querySelectorAll(".main-image").forEach(img => {
+                img.addEventListener("mouseover", function () {
+                    this.style.transform = "scale(1.07)";
+                });
+                img.addEventListener("mouseout", function () {
+                    this.style.transform = "scale(1)";
+                });
+            });
+        }
+
+        // Gán lại hàm showContent vào phạm vi toàn cục để dùng trong HTML
+        window.showContent = showContent;
+
+        // Thêm hiệu ứng hover lần đầu tiên khi tải trang
+        addImageHoverEffect();
+    });
+
+    // Nội dung của từng phần (giữ nguyên)
+    const contents = {
+        "mo-dau": `
+            <h1>Mở đầu</h1>
+            <p>Sau Hiệp định Genève năm 1954, Việt Nam bị chia cắt thành hai miền. Miền Bắc được giải phóng, tiến hành xây dựng chủ nghĩa xã hội, còn miền Nam nằm dưới sự kiểm soát của chính quyền Ngô Đình Diệm do Mỹ hậu thuẫn. Mỹ can thiệp sâu vào miền Nam, ngăn cản tổng tuyển cử thống nhất đất nước, đàn áp phong trào cách mạng, khiến nhân dân miền Nam phải đứng lên đấu tranh.</p>
+            <img src="https://vnanet.vn/Data/Articles/2020/10/12/5062231/vna_potal_60_nam_thong_tan_xa_giai_phong_12101960_%E2%80%93_12102020_nhung_buc_anh_kinh_dien_ra_doi_trong_lua_dan_stand.jpg" alt="Người dân miền Nam đấu tranh" class="main-image">
+        `,
+        "dien-bien": `
+            <h1>Diễn biến</h1>
+                    <p>Giai đoạn 1954 – 1960: Nhân dân miền Nam đấu tranh chính trị chống chế độ độc tài Ngô Đình Diệm. Năm 1960, Mặt trận Dân tộc Giải phóng miền Nam Việt Nam ra đời, đánh dấu bước phát triển của cuộc kháng chiến.</p>
+                    <img src="https://nghiencuuquocte.org/wp-content/uploads/2015/10/Diem-1956.jpg" alt="Ngô Đình Diệm" class="main-image">
+                    <div class="caption">Ngô Đình Diệm lên nắm quyền vào 26/10/1955</div>
+
+                    <p>Giai đoạn 1961 – 1965: Mỹ thực hiện "Chiến tranh đặc biệt", sử dụng quân đội Sài Gòn làm nòng cốt, nhưng bị quân dân miền Nam đánh bại với các chiến thắng Ấp Bắc (1963), Bình Giã (1964), An Lão, Ba Gia...</p>
+                    <img src="https://icdn.dantri.com.vn/a3HWDOlTcvMNT73KRccc/Image/2013/04/3-cfe2c.jpg" class="main-image">
+                    <div class="caption">Một lính Việt Nam Cộng hòa đe dọa một nông dân bị nghi ngờ (9/1/1964)</div>
+
+                    <p>Giai đoạn 1965 – 1968: Mỹ leo thang "Chiến tranh cục bộ", đưa hơn 500.000 quân viễn chinh vào miền Nam, đồng thời tiến hành chiến tranh phá hoại miền Bắc. Quân dân ta đã đánh bại Mỹ trong chiến dịch phản công mùa khô (1965 – 1966), đặc biệt là cuộc Tổng tiến công và nổi dậy Tết Mậu Thân 1968.</p>
+                    <img src="https://icdn.dantri.com.vn/a3HWDOlTcvMNT73KRccc/Image/2013/04/6-cfe2c.jpg" class="main-image">
+                    <div class="caption">Lính Mỹ với dòng chữ "War Is Hell" trên mũ (18/6/1965)</div>
+
+                    <p>Giai đoạn 1969 – 1973: Mỹ chuyển sang "Việt Nam hóa chiến tranh", rút dần quân viễn chinh, nhưng vẫn viện trợ lớn cho chính quyền Sài Gòn. Cuộc kháng chiến tiếp tục với đỉnh cao là chiến thắng Đường 9 - Nam Lào (1971), "Điện Biên Phủ trên không" (1972). Hiệp định Paris 1973 được ký kết, Mỹ cam kết rút quân khỏi Việt Nam.</p>
+                    <img src="https://icdn.dantri.com.vn/a3HWDOlTcvMNT73KRccc/Image/2013/04/24-cfe2c.jpg" class="main-image">
+                    <div class="caption">Lính Mỹ đẩy trực thăng xuống biển để tạo chỗ trống (29/4/1975)</div>
+
+                    <p>Giai đoạn 1973 – 1975: Quân dân ta đẩy mạnh chiến tranh giải phóng miền Nam, với đỉnh cao là chiến dịch Hồ Chí Minh lịch sử (30/4/1975), giải phóng hoàn toàn miền Nam, thống nhất đất nước.</p>
+                    <img src="https://icdn.dantri.com.vn/a3HWDOlTcvMNT73KRccc/Image/2013/04/1-cfe2c.jpg" class="main-image">
+                    <div class="caption">Xe tăng quân Giải phóng húc đổ cổng Dinh Độc Lập (30/4/1975)</div>
+                </div>
+        `,
+        "nguyen-nhan": `
+            <h2>Nguyên nhân</h2>
+    <p>
+    Nguyên nhân trực tiếp: Mỹ và chính quyền Sài Gòn phá hoại Hiệp định Genève, đàn áp nhân dân miền Nam, gây ra chiến tranh.
+        <br><br>
+       <h2>Nguyên nhân sâu xa:</h2>
+        <br><br>
+        Nhân dân Việt Nam có truyền thống yêu nước, quyết tâm thống nhất đất nước.
+<br><br>
+Cuộc đấu tranh giữa cách mạng (do Đảng Lao động Việt Nam lãnh đạo) và phản cách mạng (do Mỹ và chính quyền Sài Gòn kiểm soát).
+<br><br>
+Mỹ muốn biến miền Nam Việt Nam thành căn cứ chống cộng, ngăn chặn phong trào giải phóng dân tộc ở Đông Nam Á.
+            <img src="https://icdn.dantri.com.vn/a3HWDOlTcvMNT73KRccc/Image/2013/04/26-cfe2c.jpg" alt="Image 1" class="main-image">
+        `,
+        "ket-qua": `
+            <h2>Kết quả</h2>
+    <p>
+        Việt Nam hoàn toàn thống nhất, chấm dứt ách thống trị của đế quốc Mỹ và chính quyền Sài Gòn.
+        <br><br>
+        Mỹ chịu thất bại nặng nề, buộc phải rút khỏi Việt Nam.
+    </p>
+            <img src="https://lh5.googleusercontent.com/proxy/4Ffi_mDVsBuu-GUrt6xh0hOAndXn1ooOxcq9VbXIY1ti85vo8RMY6T8jS4fAsA8fjh0HkGQXqy5UwnPPKDvvUjOfvzEwqAXTuSijF7mk" alt="Image 1" class="main-image">
+        `,
+        "y-nghia": `
+            <h1>Ý nghĩa</h1>
+                    <p>Chấm dứt hơn 100 năm đô hộ của thực dân, đế quốc, đưa đất nước bước vào kỷ nguyên mới: độc lập, thống nhất, đi lên chủ nghĩa xã hội.</p>
+                    <p>Cổ vũ phong trào giải phóng dân tộc trên thế giới, làm suy yếu hệ thống thực dân kiểu mới của Mỹ.</p>
+                    <p>Cuộc kháng chiến chống Mỹ là một trong những cuộc chiến tranh cách mạng vĩ đại nhất của dân tộc Việt Nam, thể hiện tinh thần yêu nước, ý chí kiên cường và sự lãnh đạo tài tình của Đảng Cộng sản Việt Nam.</p>
+            <img src="https://noibo.kiengiang.dcs.vn/uploads/news/2024_03/anh-2.1.jpg" alt="Chiến thắng 30/4" class="main-image">
+        `
+    };
+</script>
+</body>
+</html>
